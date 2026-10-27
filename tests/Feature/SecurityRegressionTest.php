@@ -119,4 +119,27 @@ class SecurityRegressionTest extends TestCase
         $admin = User::factory()->create(['role' => 'admin', 'is_active' => true]);
         $this->assertTrue($admin->canAccessFilament());
     }
+
+    public function test_portal_login_issues_otp_not_session(): void
+    {
+        $pilgrim = Pilgrim::factory()->create(['is_active' => true]);
+        $res = $this->post('/portal/login', [
+            'registration_number' => $pilgrim->registration_number,
+            'passport_or_phone' => $pilgrim->phone,
+        ]);
+        $res->assertRedirect(route('portal.otp'));
+        // Belum verified -> dashboard tolak
+        $this->get('/portal')->assertRedirect(route('portal.login'));
+        // OTP page tampil
+        $this->get('/portal/otp')->assertStatus(200);
+        // OTP salah -> error, attempts +1
+        $this->post('/portal/otp', ['otp' => '000000'])->assertSessionHasErrors('otp');
+    }
+
+    public function test_portal_demo_credentials_removed(): void
+    {
+        $html = $this->get('/portal/login')->getContent();
+        $this->assertStringNotContainsString('Demo Kredensial', $html);
+        $this->assertStringNotContainsString('C1234567', $html);
+    }
 }

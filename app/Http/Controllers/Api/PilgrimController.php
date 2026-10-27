@@ -68,13 +68,7 @@ class PilgrimController extends Controller
         if (! $pilgrim instanceof \App\Models\Pilgrim) {
             return response()->json(['success' => false, 'message' => 'Unauthorized.'], 401);
         }
-
-        if ($booking->pilgrim_id !== $pilgrim->id) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Booking tidak ditemukan.',
-            ], 403);
-        }
+        \Illuminate\Support\Facades\Gate::forUser($pilgrim)->authorize('viewPilgrim', $booking);
 
         $itineraries = Itinerary::where('package_id', $booking->package_id)
             ->orderBy('day_number')

@@ -29,5 +29,8 @@ class AppServiceProvider extends ServiceProvider
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
+
+        \Illuminate\Support\Facades\Gate::policy(\App\Models\Booking::class, \App\Policies\BookingPolicy::class);
+        \Illuminate\Support\Facades\Gate::policy(\App\Models\Invoice::class, \App\Policies\InvoicePolicy::class);
     }
 }

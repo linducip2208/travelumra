@@ -30,6 +30,9 @@ class InvoiceController extends Controller
         if ($invoice->pilgrim_id !== $pilgrimId) {
             abort(404);
         }
+        \Illuminate\Support\Facades\Gate::forUser(
+            \App\Models\Pilgrim::find($pilgrimId) ?? new \App\Models\Pilgrim()
+        )->authorize('viewPilgrim', $invoice);
 
         $invoice->load(['booking.package', 'payments']);
 

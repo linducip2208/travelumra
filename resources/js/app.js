@@ -26,15 +26,15 @@ function initBannerSlider() {
 }
 
 function initTestimonials() {
-    const items = document.querySelectorAll('.testimonial-slide');
+    const items = document.querySelectorAll('.testimonial-item');
     const dots = document.querySelectorAll('.testimonial-dot');
     if (!items.length || items.length < 2) return;
     let idx = 0;
     window.testimonialGo = (i) => {
-        items[idx]?.classList.remove('active');
+        items[idx]?.classList.add('hidden');
         dots[idx]?.classList.remove('!bg-white', '!w-8');
         idx = (i + items.length) % items.length;
-        items[idx]?.classList.add('active');
+        items[idx]?.classList.remove('hidden');
         dots[idx]?.classList.add('!bg-white', '!w-8');
     };
     let timer = setInterval(() => window.testimonialGo(idx + 1), 6000);
@@ -46,11 +46,13 @@ function initTestimonials() {
 
 function initGatewayToggle() {
     const radios = document.querySelectorAll('input[name="payment_method"]');
-    const gatewayBox = document.getElementById('gateway-options');
+    const gatewayBox = document.getElementById('gateway-options') || document.getElementById('gateway_options');
     if (!radios.length || !gatewayBox) return;
     const sync = () => {
         const v = document.querySelector('input[name="payment_method"]:checked')?.value;
-        gatewayBox.style.display = v === 'gateway' ? '' : 'none';
+        const show = v === 'gateway';
+        gatewayBox.style.display = show ? '' : 'none';
+        gatewayBox.classList.toggle('hidden', !show);
     };
     radios.forEach((r) => r.addEventListener('change', sync));
     sync();

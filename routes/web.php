@@ -52,6 +52,8 @@ Route::get('/robots.txt', [ProgrammaticSeoController::class, 'robots']);
 Route::prefix('portal')->group(function () {
     Route::get('/login', [\App\Http\Controllers\Portal\AuthController::class, 'showLogin'])->name('portal.login');
     Route::post('/login', [\App\Http\Controllers\Portal\AuthController::class, 'login'])->middleware('throttle:5,1');
+    Route::get('/otp', [\App\Http\Controllers\Portal\AuthController::class, 'showOtp'])->name('portal.otp');
+    Route::post('/otp', [\App\Http\Controllers\Portal\AuthController::class, 'verifyOtp'])->name('portal.otp.verify')->middleware('throttle:10,1');
     Route::post('/logout', [\App\Http\Controllers\Portal\AuthController::class, 'logout'])->name('portal.logout');
 
     Route::middleware('portal.auth')->group(function () {

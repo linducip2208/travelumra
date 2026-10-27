@@ -63,33 +63,7 @@
 </div>
 
 @push('scripts')
-<style>
-.banner-slide { opacity: 0; transition: opacity 0.7s ease, transform 0.7s ease; transform: scale(1.05); pointer-events: none; }
-.banner-slide.active { opacity: 1; transform: scale(1); pointer-events: auto; }
-</style>
-@if($sliders->count() > 1)
-<script>
-let bannerIdx = 0;
-const bannerSlides = document.querySelectorAll('.banner-slide');
-const bannerDots = document.querySelectorAll('.banner-dot');
-const totalSlides = bannerSlides.length;
-
-function bannerGo(i) {
-    bannerSlides[bannerIdx].classList.remove('active');
-    bannerDots[bannerIdx].classList.remove('!bg-navy-700', '!w-8');
-    bannerIdx = i;
-    bannerSlides[bannerIdx].classList.add('active');
-    bannerDots[bannerIdx].classList.add('!bg-navy-700', '!w-8');
-}
-function bannerNext() { bannerGo((bannerIdx + 1) % totalSlides); }
-function bannerPrev() { bannerGo((bannerIdx - 1 + totalSlides) % totalSlides); }
-let bannerTimer = setInterval(bannerNext, 5000);
-document.addEventListener('visibilitychange', () => {
-    if (document.hidden) { clearInterval(bannerTimer); }
-    else { bannerTimer = setInterval(bannerNext, 5000); }
-});
-</script>
-@endif
+{{-- Slider logic dibundel di resources/js/app.js (initBannerSlider). Inline dihapus agar tidak double timer. --}}
 @endpush
 @else
 {{-- Fallback static slider if no dynamic slides --}}
@@ -275,22 +249,7 @@ document.addEventListener('visibilitychange', () => {
             @endif
         </div>
         @push('scripts')
-        @if($testimonials->count() > 1)
-        <script>
-        let testimonialIdx = 0;
-        const testimonialItems = document.querySelectorAll('.testimonial-item');
-        const testimonialDots = document.querySelectorAll('.testimonial-dot');
-        const testimonialTotal = testimonialItems.length;
-        function testimonialGo(i) {
-            testimonialItems[testimonialIdx].classList.add('hidden');
-            testimonialDots[testimonialIdx].classList.remove('!bg-white', '!w-8');
-            testimonialIdx = i;
-            testimonialItems[testimonialIdx].classList.remove('hidden');
-            testimonialDots[testimonialIdx].classList.add('!bg-white', '!w-8');
-        }
-        setInterval(() => testimonialGo((testimonialIdx + 1) % testimonialTotal), 6000);
-        </script>
-        @endif
+        {{-- Testimonial logic dibundel di resources/js/app.js (initTestimonials). --}}
         @endpush
         @else
         <div class="text-center">

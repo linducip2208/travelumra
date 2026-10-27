@@ -57,28 +57,21 @@
                     <label for="registration_number" class="block text-sm font-medium text-gray-700 mb-1.5">Nomor Registrasi</label>
                     <input type="text" name="registration_number" id="registration_number" value="{{ old('registration_number') }}" required autofocus
                         class="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-primary-200 focus:border-primary-500 outline-none transition"
-                        placeholder="contoh: JMA-202605-0001">
+                        placeholder="contoh: JMA-YYYYMM-XXXX" autocomplete="off">
                 </div>
 
                 <div>
                     <label for="passport_or_phone" class="block text-sm font-medium text-gray-700 mb-1.5">Nomor Paspor <span class="text-gray-400 font-normal">atau</span> Telepon</label>
                     <input type="text" name="passport_or_phone" id="passport_or_phone" value="{{ old('passport_or_phone') }}" required
                         class="w-full px-4 py-2.5 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-primary-200 focus:border-primary-500 outline-none transition"
-                        placeholder="Nomor paspor atau nomor telepon Anda">
+                        placeholder="Nomor paspor atau nomor telepon Anda" autocomplete="off">
                 </div>
 
                 <button type="submit" class="w-full px-4 py-2.5 bg-gradient-to-r from-primary-500 to-primary-600 text-white text-sm font-semibold rounded-xl hover:from-primary-600 hover:to-primary-700 transition shadow-lg shadow-primary-200">
-                    Masuk
+                    Kirim Kode OTP
                 </button>
+                <p class="text-xs text-gray-400 text-center">Kode OTP 6 digit dikirim via WhatsApp ke nomor terdaftar.</p>
             </form>
-
-            <div class="mt-6 p-4 bg-gray-50 rounded-xl border border-gray-100">
-                <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Demo Kredensial</p>
-                <div class="space-y-1.5 text-xs text-gray-600">
-                    <p><span class="font-medium text-gray-700">Reg:</span> JMA-202605-0001 <span class="mx-2 text-gray-300">|</span> <span class="font-medium text-gray-700">Paspor:</span> C1234567</p>
-                    <p><span class="font-medium text-gray-700">Reg:</span> JMA-202605-0002 <span class="mx-2 text-gray-300">|</span> <span class="font-medium text-gray-700">Paspor:</span> C2345678</p>
-                </div>
-            </div>
         </div>
     </div>
 

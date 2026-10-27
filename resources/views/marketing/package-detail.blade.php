@@ -242,12 +242,5 @@
 @endsection
 
 @push('scripts')
-<script>
-document.querySelectorAll('input[name="payment_method"]').forEach(r => {
-    r.addEventListener('change', function() {
-        const opts = document.getElementById('gateway_options');
-        if (opts) opts.classList.toggle('hidden', this.value !== 'gateway');
-    });
-});
-</script>
+{{-- Gateway toggle dibundel di resources/js/app.js (initGatewayToggle). --}}
 @endpush

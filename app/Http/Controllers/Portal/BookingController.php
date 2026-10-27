@@ -29,6 +29,10 @@ class BookingController extends Controller
         if ($booking->pilgrim_id !== $pilgrimId) {
             abort(404);
         }
+        // Policy enforcement (defense in depth, session guard di atas tetap utama)
+        \Illuminate\Support\Facades\Gate::forUser(
+            \App\Models\Pilgrim::find($pilgrimId) ?? new \App\Models\Pilgrim()
+        )->authorize('viewPilgrim', $booking);
 
         $booking->load(['package', 'invoices.payments']);
 
