@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Unifikasi token warna: marketing (brand/navy/gold) + portal (primary indigo).
+       Nilai disalin dari tailwind.config inline agar Vite build sama dengan CDN. */
+    --color-brand-50: #f0fdfa;
+    --color-brand-100: #ccfbf1;
+    --color-brand-200: #99f6e4;
+    --color-brand-300: #5eead4;
+    --color-brand-400: #2dd4bf;
+    --color-brand-500: #0d9488;
+    --color-brand-600: #0f766e;
+    --color-brand-700: #115e59;
+    --color-brand-800: #134e4a;
+    --color-brand-900: #042f2e;
+
+    --color-navy-50: #f0f4fd;
+    --color-navy-100: #e0e8f9;
+    --color-navy-200: #b9cdf2;
+    --color-navy-300: #8daee8;
+    --color-navy-400: #608bdc;
+    --color-navy-500: #3b6dcb;
+    --color-navy-600: #1e3a8a;
+    --color-navy-700: #1a2f6e;
+    --color-navy-800: #162556;
+    --color-navy-900: #0f1a3d;
+
+    --color-gold-400: #fbbf24;
+    --color-gold-500: #f59e0b;
+    --color-gold-600: #d97706;
+
+    --color-primary-50: #eef2ff;
+    --color-primary-100: #e0e7ff;
+    --color-primary-200: #c7d2fe;
+    --color-primary-300: #a5b4fc;
+    --color-primary-400: #818cf8;
+    --color-primary-500: #6366f1;
+    --color-primary-600: #4f46e5;
+    --color-primary-700: #4338ca;
+    --color-primary-800: #3730a3;
+    --color-primary-900: #312e81;
+}
+
+/* Pindahan dari inline <style> di layouts/marketing (bounceIn) + license pulse-ring */
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+@keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+    70% { box-shadow: 0 0 0 12px rgba(99, 102, 241, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+}
+.animate-bounce-in { animation: bounceIn 0.5s ease-out; }
+.animate-pulse-ring { animation: pulse-ring 2s infinite; }
+
+.banner-slide { opacity: 0; transition: opacity 0.7s ease, transform 0.7s ease; transform: scale(1.05); pointer-events: none; }
+.banner-slide.active { opacity: 1; transform: scale(1); pointer-events: auto; }
+
+/* Hormati prefers-reduced-motion (a11y) */
+@media (prefers-reduced-motion: reduce) {
+    .banner-slide, .animate-bounce-in, .animate-pulse-ring { animation: none; transition: none; }
+}
