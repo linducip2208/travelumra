@@ -155,19 +155,19 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-sm font-medium mb-1 text-indigo-200">Nama Lengkap *</label>
-                    <input type="text" name="full_name" required class="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white placeholder-white/40 text-sm focus:ring-2 focus:ring-white/30 focus:border-white/40 outline-none" placeholder="Nama sesuai KTP">
+                    <input type="text" name="full_name" required class="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white placeholder-white/70 text-sm focus:ring-2 focus:ring-white/30 focus:border-white/40 outline-none" placeholder="Nama sesuai KTP">
                 </div>
                 <div>
                     <label class="block text-sm font-medium mb-1 text-indigo-200">No. Telepon / WA *</label>
-                    <input type="text" name="phone" required class="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white placeholder-white/40 text-sm focus:ring-2 focus:ring-white/30 focus:border-white/40 outline-none" placeholder="0812xxxxxx">
+                    <input type="text" name="phone" required class="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white placeholder-white/70 text-sm focus:ring-2 focus:ring-white/30 focus:border-white/40 outline-none" placeholder="0812xxxxxx">
                 </div>
                 <div>
                     <label class="block text-sm font-medium mb-1 text-indigo-200">NIK (KTP) *</label>
-                    <input type="text" name="nik" required minlength="16" maxlength="16" inputmode="numeric" class="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white placeholder-white/40 text-sm focus:ring-2 focus:ring-white/30 focus:border-white/40 outline-none" placeholder="16 digit NIK">
+                    <input type="text" name="nik" required minlength="16" maxlength="16" inputmode="numeric" class="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white placeholder-white/70 text-sm focus:ring-2 focus:ring-white/30 focus:border-white/40 outline-none" placeholder="16 digit NIK">
                 </div>
                 <div>
                     <label class="block text-sm font-medium mb-1 text-indigo-200">Email</label>
-                    <input type="email" name="email" class="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white placeholder-white/40 text-sm focus:ring-2 focus:ring-white/30 focus:border-white/40 outline-none" placeholder="email@example.com">
+                    <input type="email" name="email" class="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2.5 text-white placeholder-white/70 text-sm focus:ring-2 focus:ring-white/30 focus:border-white/40 outline-none" placeholder="email@example.com">
                 </div>
             </div>
 

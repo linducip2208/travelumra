@@ -11,3 +11,4 @@ Artisan::command('inspire', function () {
 \Illuminate\Support\Facades\Schedule::command('notifications:send-reminders')->dailyAt('08:00');
 \Illuminate\Support\Facades\Schedule::command('db:backup')->dailyAt('02:00');
 \Illuminate\Support\Facades\Schedule::command('broadcasts:send')->everyFiveMinutes();
+\Illuminate\Support\Facades\Schedule::command('queue:prune-failed --hours=168')->daily();

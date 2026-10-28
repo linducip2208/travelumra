@@ -230,7 +230,7 @@
                 <p class="text-white/70 text-lg italic max-w-2xl mx-auto">"{{ $t->content }}"</p>
                 <div class="mt-6">
                     @if($t->photo)
-                    <img src="{{ asset('storage/' . $t->photo) }}" class="w-16 h-16 rounded-full mx-auto mb-3 object-cover border-2 border-white/20">
+                    <img src="{{ asset('storage/' . $t->photo) }}" alt="Foto {{ $t->name }}" loading="lazy" width="64" height="64" class="w-16 h-16 rounded-full mx-auto mb-3 object-cover border-2 border-white/20">
                     @endif
                     <div class="text-white font-semibold">{{ $t->name }}</div>
                     @if($t->role)

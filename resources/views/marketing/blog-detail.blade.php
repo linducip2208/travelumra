@@ -7,7 +7,7 @@
 <article class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         @if($post->featured_image)
-        <img src="{{ asset('storage/' . $post->featured_image) }}" class="w-full h-64 sm:h-96 object-cover rounded-2xl mb-8">
+        <img src="{{ asset('storage/' . $post->featured_image) }}" alt="{{ $post->title }}" loading="lazy" width="1200" height="600" class="w-full h-64 sm:h-96 object-cover rounded-2xl mb-8">
         @endif
 
         @if($post->category)

@@ -67,13 +67,13 @@
             <h3 class="font-semibold text-gray-900 mb-4">Data Diri Jemaah</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap *</label>
-                    <input type="text" name="full_name" value="{{ old('full_name') }}" required class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
+                    <label for="field_full_name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap *</label>
+                    <input type="text" id="field_full_name" name="full_name" value="{{ old('full_name') }}" required class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
                     @error('full_name') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Gelar</label>
-                    <select name="title" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
+                    <label for="field_title" class="block text-sm font-medium text-gray-700 mb-1">Gelar</label>
+                    <select id="field_title" name="title" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
                         <option value="">—</option>
                         <option value="Bpk." {{ old('title') === 'Bpk.' ? 'selected' : '' }}>Bpk.</option>
                         <option value="Ibu" {{ old('title') === 'Ibu' ? 'selected' : '' }}>Ibu</option>
@@ -81,16 +81,16 @@
                     </select>
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Jenis Kelamin *</label>
-                    <select name="gender" required class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
+                    <label for="field_gender" class="block text-sm font-medium text-gray-700 mb-1">Jenis Kelamin *</label>
+                    <select id="field_gender" name="gender" required class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
                         <option value="male" {{ old('gender') === 'male' ? 'selected' : '' }}>Laki-laki</option>
                         <option value="female" {{ old('gender') === 'female' ? 'selected' : '' }}>Perempuan</option>
                     </select>
                     @error('gender') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Status Nikah</label>
-                    <select name="marital_status" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
+                    <label for="field_marital_status" class="block text-sm font-medium text-gray-700 mb-1">Status Nikah</label>
+                    <select id="field_marital_status" name="marital_status" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
                         <option value="">—</option>
                         <option value="single">Lajang</option>
                         <option value="married">Menikah</option>
@@ -99,47 +99,47 @@
                     </select>
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Tempat Lahir</label>
-                    <input type="text" name="birth_place" value="{{ old('birth_place') }}" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
+                    <label for="field_birth_place" class="block text-sm font-medium text-gray-700 mb-1">Tempat Lahir</label>
+                    <input type="text" id="field_birth_place" name="birth_place" value="{{ old('birth_place') }}" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal Lahir</label>
-                    <input type="date" name="birth_date" value="{{ old('birth_date') }}" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
+                    <label for="field_birth_date" class="block text-sm font-medium text-gray-700 mb-1">Tanggal Lahir</label>
+                    <input type="date" id="field_birth_date" name="birth_date" value="{{ old('birth_date') }}" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">No. Telepon / WA *</label>
-                    <input type="text" name="phone" value="{{ old('phone') }}" required class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
+                    <label for="field_phone" class="block text-sm font-medium text-gray-700 mb-1">No. Telepon / WA *</label>
+                    <input type="text" id="field_phone" name="phone" value="{{ old('phone') }}" required class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
                     @error('phone') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                    <input type="email" name="email" value="{{ old('email') }}" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
+                    <label for="field_email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" id="field_email" name="email" value="{{ old('email') }}" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
                     @error('email') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">NIK (KTP) *</label>
-                    <input type="text" name="nik" value="{{ old('nik') }}" required maxlength="16" minlength="16" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
+                    <label for="field_nik" class="block text-sm font-medium text-gray-700 mb-1">NIK (KTP) *</label>
+                    <input type="text" id="field_nik" name="nik" value="{{ old('nik') }}" required maxlength="16" minlength="16" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
                     @error('nik') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">No. Paspor</label>
-                    <input type="text" name="passport_number" value="{{ old('passport_number') }}" maxlength="20" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
+                    <label for="field_passport_number" class="block text-sm font-medium text-gray-700 mb-1">No. Paspor</label>
+                    <input type="text" id="field_passport_number" name="passport_number" value="{{ old('passport_number') }}" maxlength="20" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
                 </div>
                 <div class="col-span-2">
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Alamat</label>
-                    <textarea name="address" rows="2" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">{{ old('address') }}</textarea>
+                    <label for="field_address" class="block text-sm font-medium text-gray-700 mb-1">Alamat</label>
+                    <textarea id="field_address" name="address" rows="2" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">{{ old('address') }}</textarea>
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Kota</label>
-                    <input type="text" name="city" value="{{ old('city') }}" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
+                    <label for="field_city" class="block text-sm font-medium text-gray-700 mb-1">Kota</label>
+                    <input type="text" id="field_city" name="city" value="{{ old('city') }}" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Provinsi</label>
-                    <input type="text" name="province" value="{{ old('province') }}" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
+                    <label for="field_province" class="block text-sm font-medium text-gray-700 mb-1">Provinsi</label>
+                    <input type="text" id="field_province" name="province" value="{{ old('province') }}" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Kode Pos</label>
-                    <input type="text" name="postal_code" value="{{ old('postal_code') }}" maxlength="10" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
+                    <label for="field_postal_code" class="block text-sm font-medium text-gray-700 mb-1">Kode Pos</label>
+                    <input type="text" id="field_postal_code" name="postal_code" value="{{ old('postal_code') }}" maxlength="10" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
                 </div>
             </div>
         </div>
@@ -157,16 +157,16 @@
                         <p class="text-xs text-gray-500 mt-1">QRIS, transfer bank, e-wallet — diproses otomatis via Tripay.</p>
                         <div id="payment_gateway_options" class="mt-3 space-y-2">
                             <div>
-                                <label class="text-xs font-medium text-gray-600">Gateway</label>
-                                <select name="payment_provider_id" class="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
+                                <label for="field_payment_provider_id" class="text-xs font-medium text-gray-600">Gateway</label>
+                                <select id="field_payment_provider_id" name="payment_provider_id" class="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
                                     @foreach ($providers as $prov)
                                         <option value="{{ $prov->id }}" {{ old('payment_provider_id') == $prov->id ? 'selected' : '' }}>{{ $prov->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div>
-                                <label class="text-xs font-medium text-gray-600">Channel Pembayaran</label>
-                                <select name="payment_channel" class="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
+                                <label for="field_payment_channel" class="text-xs font-medium text-gray-600">Channel Pembayaran</label>
+                                <select id="field_payment_channel" name="payment_channel" class="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400 outline-none">
                                     <option value="BRIVA" selected>BRI Virtual Account</option>
                                     <option value="BCAVA">BCA Virtual Account</option>
                                     <option value="BNIVA">BNI Virtual Account</option>
