@@ -11,33 +11,8 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="canonical" href="{{ url()->current() }}">
-    <script src="https://cdn.tailwindcss.com"></script>
+    {{-- Tailwind via Vite build (app.css). CDN dihapus agar single source. --}}
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-                    colors: {
-                        brand: {
-                            50: '#f0fdfa', 100: '#ccfbf1', 200: '#99f6e4', 300: '#5eead4',
-                            400: '#2dd4bf', 500: '#0d9488', 600: '#0f766e', 700: '#115e59',
-                            800: '#134e4a', 900: '#042f2e',
-                        },
-                        navy: {
-                            50: '#f0f4fd', 100: '#e0e8f9', 200: '#b9cdf2', 300: '#8daee8',
-                            400: '#608bdc', 500: '#3b6dcb', 600: '#1e3a8a', 700: '#1a2f6e',
-                            800: '#162556', 900: '#0f1a3d',
-                        },
-                        gold: {
-                            400: '#fbbf24', 500: '#f59e0b', 600: '#d97706',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700,800,900" rel="stylesheet" />

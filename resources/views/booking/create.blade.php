@@ -6,16 +6,7 @@
     <title>Pesan {{ $package->name }} — Travel Umrah</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700,800" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-                }
-            }
-        }
-    </script>
+    @vite(['resources/css/app.css'])
 </head>
 <body class="bg-gray-50 antialiased">
 
